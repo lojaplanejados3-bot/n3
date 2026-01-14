@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Central de Atendimento</title>
+  <meta name="description" content="Central de atendimento rápida e prática via WhatsApp.">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #2e7d32;
+      --green-light: #eaf6ee;
+      --white: #ffffff;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: var(--green-light);
+      color: var(--green);
+    }
+
+    .container {
+      max-width: 480px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .hero {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 25px;
+    }
+
+    .hero i {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card i {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .card span {
+      font-size: 14px;
+      color: #3fa36c;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 14px;
+    }
+
+    footer a {
+      display: block;
+      margin-top: 12px;
+      color: var(--green);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer i {
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <i class="fa-solid fa-headset"></i>
+    <h1>Central de Atendimento</h1>
+    <p>
+      Conectamos você aos nossos serviços de forma rápida e prática.
+      Escolha uma das opções abaixo e será direcionado para nosso WhatsApp.
+    </p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="card" onclick="openWhatsApp('Olá, gostaria de atendimento humano.')">
+    <i class="fa-solid fa-users"></i>
+    <h2>Atendimento Humano</h2>
+    <span><i class="fa-brands fa-whatsapp"></i> Clique para iniciar conversa</span>
+  </div>
+
+  <div class="card" onclick="openWhatsApp('Olá, preciso falar com um técnico.')">
+    <i class="fa-solid fa-user-gear"></i>
+    <h2>Consultar Técnico</h2>
+    <span><i class="fa-brands fa-whatsapp"></i> Clique para iniciar conversa</span>
+  </div>
+
+  <div class="card" onclick="openWhatsApp('Olá, gostaria da segunda via da minha conta.')">
+    <i class="fa-solid fa-file-invoice-dollar"></i>
+    <h2>2ª Via de Contas</h2>
+    <span><i class="fa-brands fa-whatsapp"></i> Clique para iniciar conversa</span>
+  </div>
+
+  <div class="card" onclick="openWhatsApp('Olá, solicito religação do sinal, por favor.')">
+    <i class="fa-solid fa-phone-volume"></i>
+    <h2>Religar Sinal</h2>
+    <span><i class="fa-brands fa-whatsapp"></i> Clique para iniciar conversa</span>
+  </div>
+
+  <div class="card" onclick="openWhatsApp('Olá, gostaria de informações sobre outros serviços.')">
+    <i class="fa-solid fa-bell-concierge"></i>
+    <h2>Outros Serviços</h2>
+    <span><i class="fa-brands fa-whatsapp"></i> Clique para iniciar conversa</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2023 Central de Atendimento. Todos os direitos reservados.
+
+    <a href="#" onclick="openWhatsApp('Olá, gostaria de atendimento.')">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+
+    <a href="tel:">
+      <i class="fa-solid fa-phone"></i> Ligar agora
+    </a>
+
+    <a href="mailto:">
+      <i class="fa-solid fa-envelope"></i> Enviar e-mail
+    </a>
+  </footer>
+
+</div>
+
+<script>
+  const BASE_WHATSAPP = "https://wa.me/message/AYSCFX3AT6FYG1";
+
+  function openWhatsApp(message) {
+    const text = encodeURIComponent(message);
+    const url = `${BASE_WHATSAPP}?text=${text}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
